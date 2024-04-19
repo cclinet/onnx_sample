@@ -43,7 +43,9 @@ private:
 };
 
 extern "C" {
-INCBIN(Onnx, "/Users/cclin/Personal/yolo/mlp.onnx");
+#ifdef MODEL_PATH
+INCBIN(Onnx, MODEL_PATH);
+#endif
 }
 int main(int, char **) {
   std::cout << "Hello, from yolo!\n";
